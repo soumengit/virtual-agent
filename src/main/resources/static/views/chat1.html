@@ -1,0 +1,43 @@
+
+      <div ng-controller="easysystemsServiceAppController" ng-init="firstService()" class="dialog">
+        <header>
+           <h1>VIRTUAL AGENT</h1>
+        </header>
+        	<br/>
+        	<div>
+        	<div id="scrolldiv" style = "overflow-y: scroll; overflow-x: hidden">
+
+          
+         <div ng-repeat = "response in easysystems.response">
+         <div ng-if="response.outputFlag">
+         <div><p>&nbsp;</p></div>
+            <div style="position: relative; left: 5em; width:90%; background-color: #007dc6; border-radius: 5px; border:1px solid grey;">
+        	<div class="column-left"><img src="../images/Watson_Img.jpeg" style="background-color:blue;" width="90%" height="100%"/></div>
+        	<div class="column-text-watson"><p line-height="2.5" compile = "response.inouttimeput"></p>
+        	 </div>
+        	   <div class="column-right-text"><p vertical-align="bottom">{{response.timeValue}}</p></div>
+        	</div>
+          </div>
+		<div ng-if="response.inputFlag">
+		<p>&nbsp;</p>
+          <div style="position: relative; left: 5em; width:90%; background-color: #78B9E7; border-radius: 5px; border:1px solid grey;">
+          <div class="column-left-text"><p vertical-align="bottom">&nbsp;</p></div>
+          <div class="column-text-user"><p align="right">{{response.inouttimeput}}</p>
+          <p line-height="100px">&nbsp;</p></div>
+          <div class="column-right"><img src="../images/blank_profile.png" style="background-color:blue;" width=59 height=56 /></div>
+          </div>
+          </div>         
+        </div>
+		</div>
+		</div>
+        	<br/><br/>
+          <div width="100%">
+        	<div style="position: absolute; bottom: 6em; left: 5em; border:1px black; border-radius: 5px; width:90%">
+        	<input type="text" id="textIn" ng-keypress= "($event.which === 13)?refreshService():0" ng-model="easysystems.inputtext" onclick="this.select()" size = "146" placeholder="Please enter your response and hit send button" style="border-radius: 5px; height:40px; width:90%">
+        	<button class="send_button" ng-click="refreshService()">&nbsp;&nbsp;Send&nbsp;&nbsp;</button>
+          </div>
+          </div>
+          <footer>
+            <img src="./images/watson.png" />
+        </footer>
+    </div>

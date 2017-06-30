@@ -1,0 +1,15 @@
+li.watson fieldset{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+  li.watson fieldset legend{
+    margin: 0 10px;
+  }
+  li.watson fieldset > *{
+    margin: 0 0 5px;
+  }
+  li.watson fieldset label{
+    display: inline-block;
+    width: 90px;
+  }
